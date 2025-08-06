@@ -81,6 +81,8 @@ DB_PASS=YourSecurePassword
 ```
 python3 app.py
 ```
+<img width="1490" height="490" alt="image" src="https://github.com/user-attachments/assets/588cb24b-f4fb-4666-b1fb-d04a9fa75d99" />
+
 **Visit in browser:**
 - http://<EC2_PUBLIC_IP>:5000/
 <img width="658" height="465" alt="image" src="https://github.com/user-attachments/assets/38dafea0-aff6-4b7d-84e9-7a1c01464872" />
@@ -117,16 +119,22 @@ sudo apt -y install postgresql-16
 ```
 psql -h <db-host-address> -p 5432 --username postgre
 # Enter The password
+```
 <img width="1174" height="303" alt="image" src="https://github.com/user-attachments/assets/fd1d30f7-960b-4dbc-ad6e-476ed2bff343" />
 
 # displays the tables
+```
 \dt
+```
 <img width="449" height="199" alt="image" src="https://github.com/user-attachments/assets/ea824806-1b14-4734-abb4-1f1c522b4915" />
 
 # view the table data
+```
 SELECT * FROM "users;"
+```
 <img width="1662" height="126" alt="image" src="https://github.com/user-attachments/assets/7b3e8c3a-a374-407e-ab9a-d070714fcdec" />
 # exit the databse
+```
 exit;
 
 ```
