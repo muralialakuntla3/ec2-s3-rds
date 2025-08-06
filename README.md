@@ -41,17 +41,19 @@ ssh -i your-key.pem ubuntu@<EC2_PUBLIC_IP>
 ### 3. ✅ Install Dependencies
 ```
 sudo apt update
-sudo apt install python3-pip python3-venv git unzip -y
+sudo apt install python3-pip python3-venv git -y
 ```
 ### 4. ✅ Upload or Clone the Project
 Option A: Clone from GitHub
 ```
+ls
 git clone https://github.com/muralialakuntla3/ec2-s3-rds.git
+ls
 cd ec2-s3-rds
+ls -a
 ```
 ### 5. ✅ Create and Activate Virtual Environment
 ```
-cd flask-user-app
 python3 -m venv venv
 source venv/bin/activate
 ```
@@ -61,7 +63,7 @@ pip install -r requirements.txt
 ```
 ### 7. ✅ Create .env File
 ```
-nano .env
+vi .env
 ```
 **Add the following and replace with your actual values:**
 ```
