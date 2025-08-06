@@ -83,6 +83,8 @@ python3 app.py
 ```
 **Visit in browser:**
 - http://<EC2_PUBLIC_IP>:5000/
+<img width="658" height="465" alt="image" src="https://github.com/user-attachments/assets/38dafea0-aff6-4b7d-84e9-7a1c01464872" />
+
 ## Test the Features
 **Sign-Up:**
 - Go to /signup
@@ -96,6 +98,40 @@ python3 app.py
 - Provide same email and password
 - Check:
   - Success or failure image is shown
+ 
+<img width="668" height="348" alt="image" src="https://github.com/user-attachments/assets/aa37cb16-f14c-4089-84a8-0fe9989c4629" />
+
+
+## Connecting to Database and Checking the information
+### Install Postgres Database Client:
+```
+sudo apt install curl ca-certificates
+sudo install -d /usr/share/postgresql-common/pgdg
+sudo curl -o /usr/share/postgresql-common/pgdg/apt.postgresql.org.asc --fail https://www.postgresql.org/media/keys/ACCC4CF8.asc
+. /etc/os-release
+sudo sh -c "echo 'deb [signed-by=/usr/share/postgresql-common/pgdg/apt.postgresql.org.asc] https://apt.postgresql.org/pub/repos/apt $VERSION_CODENAME-pgdg main' > /etc/apt/sources.list.d/pgdg.list"
+sudo apt update
+sudo apt -y install postgresql-16
+```
+### Connect to the Database
+```
+psql -h <db-host-address> -p 5432 --username postgre
+# Enter The password
+<img width="1174" height="303" alt="image" src="https://github.com/user-attachments/assets/fd1d30f7-960b-4dbc-ad6e-476ed2bff343" />
+
+# displays the tables
+\dt
+<img width="449" height="199" alt="image" src="https://github.com/user-attachments/assets/ea824806-1b14-4734-abb4-1f1c522b4915" />
+
+# view the table data
+SELECT * FROM "users;"
+<img width="1662" height="126" alt="image" src="https://github.com/user-attachments/assets/7b3e8c3a-a374-407e-ab9a-d070714fcdec" />
+# exit the databse
+exit;
+
+```
+----------------------------------------------------------------------------------- 
+
 ## Optional: Use Gunicorn for Production
 **Install Gunicorn:**
 ```
@@ -165,14 +201,3 @@ sudo gunicorn app:app --bind 0.0.0.0:80
 - **RDS**: No DB instances
 - **EC2**: No running instances or key pairs
 - **IAM**: No leftover access users or keys
-
-## Connecting to Database and Checking the information
-```
-sudo apt install curl ca-certificates
-sudo install -d /usr/share/postgresql-common/pgdg
-sudo curl -o /usr/share/postgresql-common/pgdg/apt.postgresql.org.asc --fail https://www.postgresql.org/media/keys/ACCC4CF8.asc
-. /etc/os-release
-sudo sh -c "echo 'deb [signed-by=/usr/share/postgresql-common/pgdg/apt.postgresql.org.asc] https://apt.postgresql.org/pub/repos/apt $VERSION_CODENAME-pgdg main' > /etc/apt/sources.list.d/pgdg.list"
-sudo apt update
-sudo apt -y install postgresql-16
-```
